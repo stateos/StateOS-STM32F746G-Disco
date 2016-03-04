@@ -3,7 +3,7 @@ StateOS
 
 Free, extremely simple and amazingly tiny real-time operating system (RTOS) designed for deeply embedded applications.
 It was inspired by the concept of a state machine.
-TEMPLATE.
+TEMPLATE. NOT TESTED!
 
 Features
 --------
