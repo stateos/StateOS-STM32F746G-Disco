@@ -2,7 +2,7 @@
 
     @file    StateOS: osport.h
     @author  Rajmund Szymanski
-    @date    09.03.2016
+    @date    21.05.2016
     @brief   StateOS port definitions for STM32F7 uC.
 
  ******************************************************************************
@@ -194,9 +194,9 @@ void port_tmr_force( void )
 
 /* -------------------------------------------------------------------------- */
 
-#if     defined(__CC_ARM)
+#if   defined(__ARMCC_VERSION)
 #define __noreturn  __attribute__((noreturn))
-#elif   defined(__GNUC__)
+#elif defined(__GNUC__)
 #define __noreturn  __attribute__((noreturn, naked))
 #endif
 
