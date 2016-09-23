@@ -1,7 +1,7 @@
 /******************************************************************************
  * @file    system_stm32f7xx.c
  * @author  Rajmund Szymanski
- * @date    03.03.2016
+ * @date    23.09.2016
  * @brief   This file provides set of configuration functions for STM32F7 uC.
  ******************************************************************************/
 
@@ -17,7 +17,7 @@
 
 #define MHz    1000000
 #define HSI_FREQ    16 /* MHz */
-#define HSE_FREQ     8 /* MHz */
+#define HSE_FREQ    25 /* MHz */
 #define USB_FREQ    48 /* MHz */
 #define CPU_FREQ   216 /* MHz */
 #define VDD       3000 /* mV  */
