@@ -10,8 +10,8 @@
 /* -------------------------------------------------------------------------- */
 
 //#define PLL_SOURCE_HSI        // PLL source: HSI (16MHz)
-  #define PLL_SOURCE_HSE        // PLL source: HSE ( 8MHz)
-//#define PLL_SOURCE_HSE_BYPASS // PLL source: HSE ( 8MHz)
+  #define PLL_SOURCE_HSE        // PLL source: HSE (25MHz)
+//#define PLL_SOURCE_HSE_BYPASS // PLL source: HSE (25MHz)
 
 /* -------------------------------------------------------------------------- */
 
