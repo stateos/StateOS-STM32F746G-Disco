@@ -70,6 +70,15 @@ void SystemInit( void )
 
 #ifndef __NO_SYSTEM_INIT
 __WEAK
+void SystemCoreClockUpdate( void )
+{
+}
+#endif//__NO_SYSTEM_INIT
+
+/* -------------------------------------------------------------------------- */
+
+#ifndef __NO_SYSTEM_INIT
+__WEAK
 uint32_t SystemCoreClock = CPU_FREQ * MHz;
 #else
 __WEAK
