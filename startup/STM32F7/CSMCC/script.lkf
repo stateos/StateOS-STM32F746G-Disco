@@ -5,14 +5,14 @@
 # brief    Linker script for STM32F746NG device with 1024KB FLASH and 320KB RAM
 #***********************************************************
 
-define symbol __ROM_start=0x08000000
-define symbol __ROM_size=0x00100000
++def __ROM_start=0x08000000
++def __ROM_size=0x00100000
 
-define symbol __RAM_start=0x20000000
-define symbol __RAM_size=0x00050000
++def __RAM_start=0x20000000
++def __RAM_size=0x00050000
 
-define symbol __BKP_start=0x40024000
-define symbol __BKP_size=0x00001000
++def __BKP_start=0x40024000
++def __BKP_size=0x00001000
 
 # segment vectors:
 +seg .vectors -b __ROM_start -m __ROM_size -n .vectors -k
