@@ -1,7 +1,7 @@
 /*******************************************************************************
 @file     stm32f7xx.ld
 @author   Rajmund Szymanski
-@date     21.11.2017
+@date     19.07.2018
 @brief    Linker script for STM32F746NG device with 1024KB FLASH and 320KB RAM
 *******************************************************************************/
 
@@ -13,8 +13,17 @@ MEMORY
 */	BKP (rwx) : ORIGIN = 0x40024000, LENGTH =    4k
 }
 
-__ram_start = ORIGIN(RAM);
-__ram_end   = ORIGIN(RAM) + LENGTH(RAM);
+__ROM_start = ORIGIN(ROM);
+__ROM_size  = LENGTH(ROM);
+__ROM_end   = ORIGIN(ROM) + LENGTH(ROM);
+
+__RAM_start = ORIGIN(RAM);
+__RAM_size  = LENGTH(RAM);
+__RAM_end   = ORIGIN(RAM) + LENGTH(RAM);
+
+__BKP_start = ORIGIN(BKP);
+__BKP_size  = LENGTH(BKP);
+__BKP_end   = ORIGIN(BKP) + LENGTH(BKP);
 
 PROVIDE(main_stack_size = 0);
 PROVIDE(proc_stack_size = 0);
@@ -27,9 +36,9 @@ SECTIONS
 	{
 		KEEP (*(.vectors))
 
-		*(.text   .text.*   .gnu.linkonce.t.*)
-		*(.rodata .rodata.* .gnu.linkonce.r.*)
-		*(.glue_7 .glue_7t)
+		*(.text*   .gnu.linkonce.t.*)
+		*(.rodata* .gnu.linkonce.r.*)
+		*(.glue_7  .glue_7t)
 	} > ROM
 
 	.init : ALIGN(4)
@@ -118,7 +127,7 @@ SECTIONS
 		__heap_end = __proc_stack_start;
 	} > RAM
 
-	.proc_stack __ram_end - __proc_stack_size (NOLOAD) : ALIGN(8)
+	.proc_stack __RAM_end - __proc_stack_size (NOLOAD) : ALIGN(8)
 	{
 		__proc_stack_start = .;
 		. += proc_stack_size;

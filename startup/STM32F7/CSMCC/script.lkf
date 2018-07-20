@@ -1,18 +1,21 @@
 #***********************************************************
 # file     stm32f7xx.lkf
 # author   Rajmund Szymanski
-# date     23.11.2017
+# date     19.07.2018
 # brief    Linker script for STM32F746NG device with 1024KB FLASH and 320KB RAM
 #***********************************************************
 
 +def __ROM_start=0x08000000
 +def __ROM_size=0x00100000
++def __ROM_end=0x08100000
 
 +def __RAM_start=0x20000000
 +def __RAM_size=0x00050000
++def __RAM_end=0x20050000
 
 +def __BKP_start=0x40024000
 +def __BKP_size=0x00001000
++def __BKP_end=0x40025000
 
 # segment vectors:
 +seg .vectors -b __ROM_start -m __ROM_size -n .vectors -k
