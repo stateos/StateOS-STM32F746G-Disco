@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-set(CMAKE_TOOLCHAIN_FILE "common/stateos/cmake/config-32f746gdiscovery-gcc.cmake")
+set(CMAKE_TOOLCHAIN_FILE "common/stateos/cmake/config-stm32f746g-disco-gcc.cmake")
 set(CMAKE_BUILD_TYPE     "Release")
 
 project(test)

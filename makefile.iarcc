@@ -8,7 +8,7 @@ SCRIPT  :=
 COMMON  := common
 
 #----------------------------------------------------------#
-include $(COMMON)/stateos/make/32f746gdiscovery/makefile.iarcc
+include $(COMMON)/stateos/make/stm32f746g-disco/makefile.iarcc
 #----------------------------------------------------------#
 include $(COMMON)/cmsis/makefile
 include $(COMMON)/device/makefile
